@@ -1,0 +1,206 @@
+import sys
+from PyQt4 import QtCore, QtGui
+from PyQt4.QtGui import *
+from PyQt4.QtGui import (
+     QApplication, QWidget, QLabel, QLineEdit, QTextEdit,
+     QFrame, QGridLayout, QVBoxLayout,
+     )
+
+class ThreadWidget(QtGui.QWidget):
+    def __init__(self, parent=None):
+        QtGui.QWidget.__init__(self, parent)
+        #self.setGeometry(250, 250, 200, 50)
+        self.setWindowTitle('BATTLESHIP GAME')
+        
+        mainGrid = QtGui.QGridLayout()
+        buttonGrid = QtGui.QGridLayout()
+        #self.frame = QFrame(self)
+        #self.frame.setFrameShape(QFrame.Box)
+        #self.setLayout(buttonGrid)
+        self.palette = QtGui.QPalette()
+        self.palette.setBrush(QtGui.QPalette.Background,QBrush(QPixmap("b.jpg")))
+        self.setPalette(self.palette)
+        
+        #mainGrid = QGridlayout()
+        #
+        edit1 = QtGui.QTextEdit()
+        edit2 = QtGui.QTextEdit()
+        edit3 = QtGui.QTextEdit()
+        
+        #Creating Buttons
+        new_game = QtGui.QPushButton("new Game")
+        exit = QtGui.QPushButton("Exit")
+        button_0_0 = QtGui.QPushButton()
+        button_0_1 = QtGui.QPushButton()
+        button_0_2 = QtGui.QPushButton()
+        button_0_3 = QtGui.QPushButton()
+        button_0_4 = QtGui.QPushButton()
+        button_0_5 = QtGui.QPushButton()
+        button_1_0 = QtGui.QPushButton()
+        button_1_1 = QtGui.QPushButton()
+        button_1_2 = QtGui.QPushButton()
+        button_1_3 = QtGui.QPushButton()
+        button_1_4 = QtGui.QPushButton()
+        button_1_5 = QtGui.QPushButton()
+        button_2_0 = QtGui.QPushButton()
+        button_2_1 = QtGui.QPushButton()
+        button_2_2 = QtGui.QPushButton()
+        button_2_3 = QtGui.QPushButton()
+        button_2_4 = QtGui.QPushButton()
+        button_2_5 = QtGui.QPushButton()
+        button_3_0 = QtGui.QPushButton()
+        button_3_1 = QtGui.QPushButton()
+        button_3_2 = QtGui.QPushButton()
+        button_3_3 = QtGui.QPushButton()
+        button_3_4 = QtGui.QPushButton()
+        button_3_5 = QtGui.QPushButton()
+        button_4_0 = QtGui.QPushButton()
+        button_4_1 = QtGui.QPushButton()
+        button_4_2 = QtGui.QPushButton()
+        button_4_3 = QtGui.QPushButton()
+        button_4_4 = QtGui.QPushButton()
+        button_4_5 = QtGui.QPushButton()
+        button_5_0 = QtGui.QPushButton()
+        button_5_1 = QtGui.QPushButton()
+        button_5_2 = QtGui.QPushButton()
+        button_5_3 = QtGui.QPushButton()
+        button_5_4 = QtGui.QPushButton()
+        button_5_5 = QtGui.QPushButton()
+        
+        #creating labels      
+        label1 = QtGui.QLabel('Enter Server:',self)
+        label1.setFont(QtGui.QFont('times',20))
+        label2 = QtGui.QLabel('Role/Player:',self)
+        label2.setFont(QtGui.QFont('times',20))
+        label3 = QtGui.QLabel('Game:',self)
+        label3.setFont(QtGui.QFont('times',20))
+        label4 = QtGui.QLabel('Message from server:',self)
+        label4.setFont(QtGui.QFont('times',20))
+        label5 = QtGui.QLabel('Scores:',self) 
+        label5.setFont(QtGui.QFont('times',20))
+        label6 = QtGui.QLabel('##BATTLESHIP GAME##',self)
+        label6.setFont(QtGui.QFont('Courier',40,20))
+        #
+        server = QtGui.QLineEdit()
+        connect = QtGui.QPushButton("Connect")
+        #hbox = QtGui.QHBoxLayout()
+        #hbox.addWidget(server)
+        #hbox.addStretch(5)		      
+        #hbox.addWidget(connect)	    
+        #self.setLayout(hbox)            buttonGrid.addWidget(label1,0,2)
+        
+        #
+        buttonGrid.addWidget(button_0_0,3,3)
+        buttonGrid.addWidget(button_0_1,3,4)
+        buttonGrid.addWidget(button_0_2,3,5)
+        buttonGrid.addWidget(button_0_3,3,6)
+        #Inserting buttons into the grid
+    
+        buttonGrid.addWidget(button_0_4,3,7)
+        buttonGrid.addWidget(button_0_5,3,8)
+        buttonGrid.addWidget(button_1_0,4,3)
+        buttonGrid.addWidget(button_1_1,4,4)
+        buttonGrid.addWidget(button_1_2,4,5)
+        buttonGrid.addWidget(button_1_3,4,6)
+        buttonGrid.addWidget(button_1_4,4,7)
+        buttonGrid.addWidget(button_1_5,4,8)
+        buttonGrid.addWidget(button_2_0,5,3)
+        buttonGrid.addWidget(button_2_1,5,4)
+        buttonGrid.addWidget(button_2_2,5,5)
+        buttonGrid.addWidget(button_2_3,5,6)
+        buttonGrid.addWidget(button_2_4,5,7)
+        buttonGrid.addWidget(button_2_5,5,8)
+        buttonGrid.addWidget(button_3_0,6,3)
+        buttonGrid.addWidget(button_3_1,6,4)
+        buttonGrid.addWidget(button_3_2,6,5)
+        buttonGrid.addWidget(button_3_3,6,6)
+        buttonGrid.addWidget(button_3_4,6,7)
+        buttonGrid.addWidget(button_3_5,6,8)
+        buttonGrid.addWidget(button_4_0,7,3)
+        buttonGrid.addWidget(button_4_1,7,4)
+        buttonGrid.addWidget(button_4_2,7,5)
+        buttonGrid.addWidget(button_4_3,7,6)
+        buttonGrid.addWidget(button_4_4,7,7)
+        buttonGrid.addWidget(button_4_5,7,8)
+        buttonGrid.addWidget(button_5_0,8,3)
+        buttonGrid.addWidget(button_5_1,8,4)
+        buttonGrid.addWidget(button_5_2,8,5)
+        buttonGrid.addWidget(button_5_3,8,6)
+        buttonGrid.addWidget(button_5_4,8,7)
+        buttonGrid.addWidget(button_5_5,8,8)
+        #
+        #buttonGrid.addWidget(new_game,10,1)
+        #buttonGrid.addWidget(exit,10,8)
+        
+        
+        #Adding All Widgets to the main grid
+        
+        mainGrid.addWidget(server,0,2)
+        mainGrid.addWidget(connect,0,3)
+        mainGrid.addWidget(label6,1,2)
+        mainGrid.addWidget(label1,0,1)
+        mainGrid.addWidget(label4,2,2)
+        mainGrid.addWidget(edit1,4,2,1,1)
+        mainGrid.addWidget(label5,5,0)
+        mainGrid.addWidget(edit2,6,0,4,2)
+        mainGrid.addWidget(label3,4,4)
+        mainGrid.addWidget(label2,2,4)
+        mainGrid.addWidget(edit3,4,4,1,1)
+   
+        mainGrid.addLayout(buttonGrid,7,2,3,3)
+        mainGrid.addWidget(new_game,11,0)
+        mainGrid.addWidget(exit,11,1)        
+
+        self.setLayout(mainGrid)
+        
+        
+        #Actions when buttons clicked
+        
+        #self.button_0_0.clicked.connect(self.button_0_0_clicked)
+        #self.button_0_1.clicked.connect(self.button_0_1_clicked)
+        #self.button_0_2.clicked.connect(self.button_0_2_clicked)
+        #self.button_0_3.clicked.connect(self.button_0_3_clicked)
+        #self.button_0_4.clicked.connect(self.button_0_4_clicked)
+        #self.button_0_5.clicked.connect(self.button_0_5_clicked)
+        #self.button_1_0.clicked.connect(self.button_1_0_clicked)
+        #self.button_1_1.clicked.connect(self.button_1_1_clicked)
+        #self.button_1_2.clicked.connect(self.button_1_2_clicked)
+        #self.button_1_3.clicked.connect(self.button_1_3_clicked)
+        #self.button_1_4.clicked.connect(self.button_1_4_clicked)
+        #self.button_1_5.clicked.connect(self.button_1_5_clicked)
+        #self.button_2_0.clicked.connect(self.button_2_0_clicked)
+        #self.button_2_1.clicked.connect(self.button_2_1_clicked)
+        #self.button_2_2.clicked.connect(self.button_2_2_clicked)
+        #self.button_2_3.clicked.connect(self.button_2_3_clicked)
+        #self.button_2_4.clicked.connect(self.button_2_4_clicked)
+        #self.button_2_5.clicked.connect(self.button_2_5_clicked)
+        #self.button_3_0.clicked.connect(self.button_3_0_clicked)
+        #self.button_3_1.clicked.connect(self.button_3_1_clicked)
+        #self.button_3_2.clicked.connect(self.button_3_2_clicked)
+        #self.button_3_3.clicked.connect(self.button_3_3_clicked)
+        #self.button_3_4.clicked.connect(self.button_3_4_clicked)
+        #self.button_3_5.clicked.connect(self.button_3_5_clicked)
+        #self.button_4_0.clicked.connect(self.button_4_0_clicked)
+        #self.button_4_1.clicked.connect(self.button_4_1_clicked)
+        #self.button_4_2.clicked.connect(self.button_4_2_clicked)
+        #self.button_4_3.clicked.connect(self.button_4_3_clicked)
+        #self.button_4_4.clicked.connect(self.button_4_4_clicked)
+        #self.button_4_5.clicked.connect(self.button_4_5_clicked)
+        #self.button_5_0.clicked.connect(self.button_5_0_clicked)
+        #self.button_5_1.clicked.connect(self.button_5_1_clicked)
+        #self.button_5_2.clicked.connect(self.button_5_2_clicked)
+        #self.button_5_3.clicked.connect(self.button_5_3_clicked)
+        #self.button_5_4.clicked.connect(self.button_5_4_clicked)
+        #self.button_5_5.clicked.connect(self.button_5_5_clicked)
+        
+        #Defined functions for connecting
+    
+        
+
+def main():
+    app = QtGui.QApplication(sys.argv)
+    myGui = ThreadWidget()		# create MyWidget object
+    myGui.show()
+    sys.exit(app.exec_())
+
+main()
